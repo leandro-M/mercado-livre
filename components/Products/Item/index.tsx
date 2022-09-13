@@ -25,9 +25,11 @@ const Item = (props: TItem) => {
       <S.Wrapper>
         <S.Price>$ {props.price?.amount?.toLocaleString('es-AR')}</S.Price>
 
-        <Link href={props?.link || ''} passHref>
+        <Link href={props.link || ''} passHref>
           <S.Title>{props.title}</S.Title>
         </Link>
+        
+        <S.State>{props.state_name}</S.State>
       </S.Wrapper>
 
       <S.State>{props.state_name}</S.State>

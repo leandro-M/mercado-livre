@@ -11,6 +11,10 @@ export const Top = styled.div`
 
     gap: ${theme.spacings(2)};
     margin-bottom: ${theme.spacings(4)};
+
+    @media screen and (${theme.media.mobile}) {
+      flex-direction: column;
+    }
   `}
 `;
 
@@ -21,6 +25,10 @@ export const SliderWrapper = styled.div`
     .slick-prev:before,
     .slick-next:before {
       color: ${theme.colors.carbon};
+    }
+
+    @media screen and (${theme.media.mobile}) {
+      width: 100%;
     }
   `}
 `;
@@ -92,6 +100,10 @@ export const Title = styled.div`
   ${({ theme }) => css`
     font-size: ${rem(28)};
     color: ${theme.colors.carbon};
+    
+    @media screen and (${theme.media.mobile}) {
+      font-size: ${rem(22)};
+    }
   `}
 `;
 

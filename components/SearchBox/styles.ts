@@ -17,7 +17,7 @@ export const Input = styled.input`
     border: none;
 
     padding: 0 ${rem(15)};
-    flex-basis: calc(100% - ${rem(42)});
+    width: 100%;
 
     ::placeholder {
       color: ${theme.colors.grey};

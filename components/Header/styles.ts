@@ -11,15 +11,15 @@ export const Container = styled.header`
   `}
 `;
 
-export const Wrapper = styled.header`
+export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
     gap: ${rem(26)};
 
-    padding: ${rem(9)} 0;
+    padding: ${rem(9)} ${theme.spacings(1)};
     background-color: ${theme.colors.yellow};
 
-    width: ${theme.grid.container};
+    max-width: ${theme.grid.container};
     margin: 0 auto;
 
     ${SearchBox} {
