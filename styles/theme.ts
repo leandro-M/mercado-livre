@@ -4,7 +4,7 @@ import fonts from './fonts'
 
 export default {
   grid: {
-    container: rem(1200),
+    container: rem(980),
   },
   fonts,
   colors,

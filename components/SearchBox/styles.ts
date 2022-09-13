@@ -34,8 +34,18 @@ export const Action = styled.button`
         background-position: center;
 
         flex-basis: ${rem(42)};
-        height: ${rem(38)};
 
         border: none;
+        cursor: pointer;
+
+        :hover { 
+            transition: ${theme.transition.default};
+            opacity: 0.8;
+        }
+
+        :active { 
+            transition: ${theme.transition.fast};
+            opacity: 0.5;
+        }
     `}
 `

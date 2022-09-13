@@ -1,5 +1,7 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 import theme from './theme'
+
+import fonts from './fonts'
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -8,26 +10,16 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  @font-face {
-    font-family: ${theme.fonts.light};
-    font-style: normal;
-    font-display: swap;
-    src: url(/fonts/proximanova-light.woff2) format('woff2');
-  }
-
-  @font-face {
-    font-family: ${theme.fonts.regular};
-    font-style: normal;
-    font-display: swap;
-    src: url(/fonts/proximanova-regular.woff2) format('woff2');
-  }
-
-  @font-face {
-    font-family: ${theme.fonts.semiBold};
-    font-style: normal;
-    font-display: swap;
-    src: url(/fonts/proximanova-semibold.woff2) format('woff2');
-  }
+  ${() => {
+    return Object.keys(fonts).map((font) => css`
+      @font-face {
+        font-family: ${fonts[font as keyof typeof fonts]};
+        font-style: normal;
+        font-display: swap;
+        src: url(/fonts/proximanova-${font}.woff2) format('woff2');
+      }
+    `)
+  }}
 
   .ReactModal__Overlay--after-open {
     z-index: 999999;

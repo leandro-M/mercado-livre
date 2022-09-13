@@ -14,10 +14,6 @@ import type { DehydratedState } from "@tanstack/react-query"
 import GlobalStyles from 'styles/global'
 import theme from 'styles/theme'
 
-import Header from 'components/Header'
-
-
-
 type PageProps = {
   dehydratedState?: DehydratedState;
 };
@@ -39,7 +35,6 @@ function App({ Component, pageProps }: ExtendedAppProps<PageProps>) {
       <Hydrate state={pageProps.dehydratedState}>
         <ThemeProvider theme={theme}>
           <GlobalStyles />
-          <Header />
 
           <Component {...pageProps} />
         </ThemeProvider>

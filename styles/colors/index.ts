@@ -6,4 +6,4 @@ export default {
   silver: '#eee',
   blue: '#3483fa',
   white: '#fff'
-}
+} as const

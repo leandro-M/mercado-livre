@@ -28,7 +28,9 @@ export const Wrapper = styled.header`
     `}
 `;
 
-export const Anchor = styled.a``
+export const Anchor = styled.a`
+    display: flex;
+`
 
 export const Logo = styled.img.attrs({
     src: logoSource,

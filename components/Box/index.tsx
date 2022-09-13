@@ -1,12 +1,12 @@
 import * as S from './styles';
 
-type TBox = {
+interface TBox extends S.TContainer{
     children?: JSX.Element | JSX.Element[]
 }
 
-const Box = ({ children }: TBox) => {
+const Box = ({ spacing, children }: TBox) => {
     return (
-        <S.Container>
+        <S.Container spacing={spacing}>
             {children}
         </S.Container>
     )

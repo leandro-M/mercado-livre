@@ -19,7 +19,10 @@ export const Item = styled.li`
     ${({ theme }) => css`
         display: flex;
         align-items: center;
+        
         gap: ${rem(10)};
+        font-size: ${rem(14)};
+
         color: ${theme.colors.grey};
 
         :not(:last-of-type) {
