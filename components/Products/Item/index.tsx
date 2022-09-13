@@ -11,7 +11,7 @@ const Item = (props: TItem) => {
         <S.Container>
             <Link href={props?.link || ''} passHref>
                 <S.Cover>
-                    <Image src={typeof props.picture === 'string' ? props.picture : ''} layout='fill' objectFit='contain' width={180} height={180} />
+                    <Image alt={props.title} title={props.title} src={typeof props.picture === 'string' ? props.picture : ''} layout='fill' objectFit='contain' width={180} height={180} />
                 </S.Cover>
             </Link>
 
