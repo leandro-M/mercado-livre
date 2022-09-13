@@ -15,7 +15,7 @@ const Loading = () => {
           r="0"
           fill="none"
           stroke="#260a13"
-          stroke-width="2"
+          strokeWidth="2"
         >
           <animate
             attributeName="r"
@@ -44,7 +44,7 @@ const Loading = () => {
           r="0"
           fill="none"
           stroke="#000000"
-          stroke-width="2"
+          strokeWidth="2"
         >
           <animate
             attributeName="r"

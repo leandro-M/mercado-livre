@@ -34,7 +34,11 @@ const Search: NextPage = () => {
   };
 
   return (
-    <LayoutDefault breadcrumbs={data?.breadcrumbs}>
+    <LayoutDefault
+      title={`${data?.info.title} | Mercado Libre`}
+      description={data?.info.description || ''}
+      breadcrumbs={data?.breadcrumbs}
+    >
       <S.Container>
         <Box spacing={2}>
           <S.Top>

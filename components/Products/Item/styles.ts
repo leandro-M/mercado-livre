@@ -15,13 +15,12 @@ export const Container = styled.div`
 
 export const Cover = styled.a`
   ${({ theme }) => css`
-  
-  width: ${rem(180)};
-  height: ${rem(180)};
-  border-radius: ${rem(4)};
-  position: relative;
+    width: ${rem(180)};
+    height: ${rem(180)};
+    border-radius: ${rem(4)};
+    position: relative;
 
-  overflow: hidden;
+    overflow: hidden;
 
     @media screen and (${theme.media.mobile}) {
       width: ${rem(110)};
@@ -34,7 +33,6 @@ export const State = styled.p`
   ${({ theme }) => css`
     padding-top: ${rem(5)};
     font-size: ${rem(12)};
-    flex-basis: ${rem(200)};
     color: ${theme.colors.squant};
 
     @media screen and (${theme.media.mobile}) {
@@ -60,6 +58,12 @@ export const Wrapper = styled.div`
       ${State} {
         display: block;
         flex-basis: 0;
+      }
+    }
+
+    @media screen and (${theme.media.desktop}) {
+      ${State} {
+        display: none;
       }
     }
   `}

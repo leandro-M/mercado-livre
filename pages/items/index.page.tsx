@@ -24,7 +24,10 @@ const Search: NextPage = () => {
   }, [router?.query]);
 
   return (
-    <LayoutDefault breadcrumbs={data?.breadcrumbs}>
+    <LayoutDefault
+    title={`${router.query.q} | Mercado Libre`}
+    description={`Envíos Gratis en el día ✓ Comprá ${router.query.q} en cuotas sin interés! Conocé nuestras increíbles ofertas y promociones en millones de productos.`}
+    breadcrumbs={data?.breadcrumbs}>
       <S.Container>
         {isLoading && <Loading />}
 
