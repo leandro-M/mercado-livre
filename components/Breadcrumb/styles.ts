@@ -1,44 +1,44 @@
 import styled, { css } from 'styled-components';
-import { rem } from 'polished'
+import { rem } from 'polished';
 
-const arrowIcon = '/images/icons/arrow.svg'
+const arrowIcon = '/images/icons/arrow.svg';
 
 export const Container = styled.ul`
-    ${({ theme }) => css`
-        list-style: none;
-        
-        display: flex;
-        
-        gap: ${rem(10)};
-        
-        padding: ${theme.spacings(1)} 0;
-    `}
+  ${({ theme }) => css`
+    list-style: none;
+
+    display: flex;
+
+    gap: ${rem(10)};
+
+    padding: ${theme.spacings(1)} 0;
+  `}
 `;
 
 export const Item = styled.li`
-    ${({ theme }) => css`
-        display: flex;
-        align-items: center;
-        
-        gap: ${rem(10)};
-        font-size: ${rem(14)};
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
 
-        color: ${theme.colors.grey};
+    gap: ${rem(10)};
+    font-size: ${rem(14)};
 
-        :not(:last-of-type) {
-            :after {
-                content: '';
-                width: ${rem(6)};
-                height: ${rem(8)};
-                
-                background-image: url(${arrowIcon});
-            }
-        }
+    color: ${theme.colors.grey};
 
-        :last-of-type {
-            font-family: 'Proxima Nova Semibold'
-        }
-    `}
-`
+    :not(:last-of-type) {
+      :after {
+        content: '';
+        width: ${rem(6)};
+        height: ${rem(8)};
 
-export const Link = styled.a``
+        background-image: url(${arrowIcon});
+      }
+    }
+
+    :last-of-type {
+      font-family: 'Proxima Nova Semibold';
+    }
+  `}
+`;
+
+export const Link = styled.a``;

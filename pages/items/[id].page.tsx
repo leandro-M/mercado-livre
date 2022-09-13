@@ -1,24 +1,24 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-import type { NextPage } from 'next'
-import { useRouter } from "next/router";
+import type { NextPage } from 'next';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 
-import { dehydrate, QueryClient } from "@tanstack/react-query";
-import Slider from "react-slick";
+import { dehydrate, QueryClient } from '@tanstack/react-query';
+import Slider from 'react-slick';
 
-import Box from 'components/Box'
-import Anchor from 'components/Anchor'
+import Box from 'components/Box';
+import Anchor from 'components/Anchor';
 
-import LayoutDefault from 'components/Layout/Default'
+import LayoutDefault from 'components/Layout/Default';
 
-import { useItemDetail } from "services/items";
-import { TItemDetail } from "services/items/types";
-import { getItemDetail } from "services/items/action";
-import { createUseItemDetail } from "services/items/keys";
+import { useItemDetail } from 'services/items';
+import { TItemDetail } from 'services/items/types';
+import { getItemDetail } from 'services/items/action';
+import { createUseItemDetail } from 'services/items/keys';
 
-import * as S from './detail.styles'
+import * as S from './detail.styles';
 
 const Search: NextPage = () => {
   const { query } = useRouter();
@@ -36,32 +36,46 @@ const Search: NextPage = () => {
   return (
     <LayoutDefault breadcrumbs={data?.breadcrumbs}>
       <S.Container>
-
         <Box spacing={2}>
           <S.Top>
             <S.SliderWrapper>
               <Slider {...settings}>
-
-                {
-                  Array.isArray(data?.info.picture) && data?.info.picture.map(item => (
+                {Array.isArray(data?.info.picture) &&
+                  data?.info.picture.map(item => (
                     <S.Cover key={item.id}>
-                      <Image src={item.url} layout='fill' objectFit='contain' width={680} height={500} />
+                      <Image
+                        src={item.url}
+                        layout="fill"
+                        objectFit="contain"
+                        width={680}
+                        height={500}
+                      />
                     </S.Cover>
-                  ))
-                }
+                  ))}
               </Slider>
             </S.SliderWrapper>
 
             <S.Detail>
-              <S.SoldQuantity>Nuevo - {data?.info.sold_quantity} vendidos</S.SoldQuantity>
+              <S.SoldQuantity>
+                Nuevo - {data?.info.sold_quantity} vendidos
+              </S.SoldQuantity>
 
               <S.ProductName>{data?.info.title}</S.ProductName>
 
               <S.Pricing>
-                <S.Price>{data?.info.price.currency} {data?.info.price.amount}</S.Price>
+                <S.Price>
+                  {data?.info.price.currency} {data?.info.price.amount}
+                </S.Price>
               </S.Pricing>
 
-              <Anchor href={data?.info.permalink} target="_blank" color='white' background='blue'>Comprar</Anchor>
+              <Anchor
+                href={data?.info.permalink}
+                target="_blank"
+                color="white"
+                background="blue"
+              >
+                Comprar
+              </Anchor>
             </S.Detail>
           </S.Top>
 
@@ -72,15 +86,14 @@ const Search: NextPage = () => {
         </Box>
       </S.Container>
     </LayoutDefault>
-  )
-}
+  );
+};
 
 export async function getServerSideProps(context: any) {
   const queryClient = new QueryClient();
 
   const id = context.params?.id;
-  const prefecthItemById = async () =>
-    await getItemDetail(id);
+  const prefecthItemById = async () => await getItemDetail(id);
 
   await queryClient.prefetchQuery<TItemDetail>(
     createUseItemDetail(id),
@@ -89,10 +102,9 @@ export async function getServerSideProps(context: any) {
 
   return {
     props: {
-      dehydratedState: dehydrate(queryClient),
-    },
+      dehydratedState: dehydrate(queryClient)
+    }
   };
 }
 
-
-export default Search
+export default Search;

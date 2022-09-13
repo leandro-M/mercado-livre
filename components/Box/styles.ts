@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
-import { rem } from 'polished'
+import { rem } from 'polished';
 
 export type TContainer = {
-  spacing?: number
-}
+  spacing?: number;
+};
 
 export const Container = styled.div<TContainer>`
   ${({ theme, spacing }) => css`

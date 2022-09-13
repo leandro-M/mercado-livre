@@ -1,47 +1,47 @@
 {
-    "name": "mercado-livre",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint"
-    },
-    "dependencies": {
-        "@tanstack/react-query": "^4.3.4",
-        "@types/styled-components": "^5.1.26",
-        "axios": "^0.27.2",
-        "next": "12.3.0",
-        "polished": "^4.2.2",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "react-slick": "^0.29.0",
-        "slick-carousel": "^1.8.1",
-        "styled-components": "^5.3.5"
-    },
-    "devDependencies": {
-        "@types/node": "18.7.16",
-        "@types/react": "18.0.19",
-        "@types/react-dom": "18.0.6",
-        "@types/react-slick": "^0.23.10",
-        "eslint": "8.23.0",
-        "eslint-config-next": "12.3.0",
-        "eslint-config-prettier": "^8.5.0",
-        "eslint-plugin-prettier": "^4.2.1",
-        "husky": "^8.0.1",
-        "lint-staged": "^13.0.3",
-        "prettier": "^2.7.1",
-        "typescript": "4.8.3"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "*.ts[x]": [
-            "next lint --fix"
-        ]
+  "name": "mercado-livre",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.3.4",
+    "@types/styled-components": "^5.1.26",
+    "axios": "^0.27.2",
+    "next": "12.3.0",
+    "polished": "^4.2.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@types/node": "18.7.16",
+    "@types/react": "18.0.19",
+    "@types/react-dom": "18.0.6",
+    "@types/react-slick": "^0.23.10",
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.3.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "typescript": "4.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.ts{x}": [
+      "next lint --fix"
+    ]
+  }
 }
